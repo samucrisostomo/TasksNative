@@ -21,17 +21,17 @@ const taskForm = document.getElementById('taskForm');
 
         function addTaskToDOM(name, date, time, completed) {
             const taskItem = document.createElement('li');
-            taskItem.classList.add('p-4', 'bg-gray-700', 'rounded-lg', 'shadow-md', 'flex', 'items-center', 'justify-between');
+            taskItem.classList.add('p-4', 'bg-gray-700', 'rounded-lg', 'shadow-lg', 'flex', 'items-center', 'justify-between');
 
             taskItem.innerHTML = `
-                <div class="flex items-center space-x-3">
-                    <input type="checkbox" class="rounded border-gray-600 text-indigo-500 focus:ring-indigo-500" ${completed ? 'checked' : ''}>
+                <div class="flex items-center space-x-4 mr-4">
+                    <input type="checkbox" class="w-5 h-5 rounded-md border-gray-600 text-indigo-500 focus:ring-indigo-500" ${completed ? 'checked' : ''}>
                     <div>
-                        <span class="font-medium text-gray-200">${name}</span>
+                        <span class="block font-medium text-gray-200 text-lg">${name}</span>
                         <p class="text-sm text-gray-400">${date} às ${time}</p>
                     </div>
                 </div>
-                <div class="flex space-x-2">
+                <div class="flex space-x-4">
                     <a href="views/task/edit.html?name=${encodeURIComponent(name)}&date=${date}&time=${time}" class="edit-btn text-sm text-indigo-400 hover:underline">Editar</a>
                     <button class="delete-btn text-sm text-red-400 hover:underline">Excluir</button>
                 </div>

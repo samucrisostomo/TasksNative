@@ -11,37 +11,45 @@
         };
     </script>
 </head>
-<body class="bg-gray-900 text-gray-100 min-h-screen flex flex-col justify-center items-center">
-    <!--Titulo -->
-    <h1 class="text-4xl font-bold text-center text-gray-100 mb-">TasksNative</h1>
-    <h2 class="text-1xl font-bold text-center text-gray-400 mb-6">Gerencie Tarefas</h2>
-    <div class="w-full max-w-md p-4 bg-gray-800 rounded-lg shadow-lg">
-        <h1 class="text-3xl font-bold text-center text-gray-100 mb-6">Cadastre sua Tarefa</h1>
-        
-        <form id="taskForm" class="mb-6">
-            <div class="mb-4">
-                <label for="taskName" class="block text-sm font-medium text-gray-300">Atividade</label>
-                <input type="text" id="taskName" class="block w-full mt-2 px-3 py-2 bg-gray-700 text-gray-100 border border-gray-600 rounded-md focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" placeholder="Digite a atividade" required>
-            </div>
+<body class="bg-gray-900 text-gray-100 min-h-screen flex justify-center items-center">
+    <!-- Main -->
+    <main class="flex flex-col items-center m-4">
+        <h1 class="text-4xl font-bold text-center text-gray-100 mb-">TasksNative</h1>
+        <h2 class="text-1xl font-bold text-center text-gray-400 mb-6">Gerencie Tarefas</h2>
+        <div class="w-full max-w-md p-4 bg-gray-800 rounded-lg shadow-lg">
+            <h1 class="text-3xl font-bold text-center text-gray-100 mb-6">Cadastre sua Tarefa</h1>
+            
+            <form id="taskForm" class="mb-6">
+                <div class="mb-4">
+                    <label for="taskName" class="block text-sm font-medium text-gray-300">Atividade</label>
+                    <input type="text" id="taskName" class="block w-full mt-2 px-3 py-2 bg-gray-700 text-gray-100 border border-gray-600 rounded-md focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" placeholder="Digite a atividade" required>
+                </div>
 
-            <div class="mb-4">
-                <label for="taskDate" class="block text-sm font-medium text-gray-300">Data</label>
-                <input type="date" id="taskDate" class="block w-full mt-2 px-3 py-2 bg-gray-700 text-gray-100 border border-gray-600 rounded-md focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" required>
-            </div>
+                <div class="mb-4">
+                    <label for="taskDate" class="block text-sm font-medium text-gray-300">Data</label>
+                    <input type="date" id="taskDate" class="block w-full mt-2 px-3 py-2 bg-gray-700 text-gray-100 border border-gray-600 rounded-md focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" required>
+                </div>
 
-            <div class="mb-4">
-                <label for="taskTime" class="block text-sm font-medium text-gray-300">Hora</label>
-                <input type="time" id="taskTime" class="block w-full mt-2 px-3 py-2 bg-gray-700 text-gray-100 border border-gray-600 rounded-md focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" required>
-            </div>
+                <div class="mb-4">
+                    <label for="taskTime" class="block text-sm font-medium text-gray-300">Hora</label>
+                    <input type="time" id="taskTime" class="block w-full mt-2 px-3 py-2 bg-gray-700 text-gray-100 border border-gray-600 rounded-md focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" required>
+                </div>
 
-            <button type="submit" class="w-full bg-indigo-600 text-white py-2 px-4 rounded-md hover:bg-indigo-500 focus:ring-2 focus:ring-indigo-300 transition duration-300">Adicionar Tarefa</button>
-        </form>
+                <button type="submit" class="w-full bg-indigo-600 text-white py-2 px-4 rounded-md hover:bg-indigo-500 focus:ring-2 focus:ring-indigo-300 transition duration-300">Adicionar Tarefa</button>
+            </form>
+            
+        </div>
+    </main>
 
-        <ul id="taskList" class="space-y-3">
-            <!-- Tarefas serão adicionadas aqui -->
-        </ul>
-    </div>
-
+    <!-- Lista de Tarefas -->
+    <section>
+        <div class="flex flex-col items-center  w-full max-w-md p-4 bg-gray-800 rounded-lg shadow-lg mt-12 p-4">
+            <h1 class="text-3xl font-bold text-center text-gray-100 mb-6">Tarefas</h1>
+            <ul id="taskList" class="space-y-4">
+                <!-- Tarefas serão adicionadas aqui -->
+            </ul>
+        </div>
+    </section>
     <!-- JavaScript -->
     <script src="script.js"></script>
 </body>
