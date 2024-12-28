@@ -26,12 +26,17 @@ const taskForm = document.getElementById('taskForm');
         
             taskItem.innerHTML = `
                 <div class="flex items-center space-x-4 mr-4">
-                    <input type="checkbox" class="w-5 h-5 rounded-md border-gray-600 text-indigo-500 focus:ring-indigo-500" ${completed ? 'checked' : ''}>
+                    <!-- Toggle Switch -->
+                    <label class="inline-flex items-center cursor-pointer">
+                        <input type="checkbox" class="sr-only peer border-white-600" ${completed ? 'checked' : ''}>
+                        <div class="relative w-11 h-6 bg-white-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-blue-300 dark:peer-focus:ring-blue-800 rounded-full peer dark:bg-white-700 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-white-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-white-600 peer-checked:bg-blue-700"></div>
+                    </label>
                     <div>
                         <span class="block font-medium text-gray-200 text-lg">${name}</span>
                         <p class="text-sm text-gray-400">${date} às ${time}</p>
                     </div>
                 </div>
+        
                 <div class="flex space-x-4">
                     <!-- Ícone de Editar -->
                     <a href="views/task/edit.html?name=${encodeURIComponent(name)}&date=${date}&time=${time}" class="edit-btn text-indigo-400 hover:text-indigo-500" title="Editar">
@@ -40,23 +45,24 @@ const taskForm = document.getElementById('taskForm');
                         </svg>
                     </a>
                     <!-- Ícone de Excluir -->
-            <button class="delete-btn text-red-400 hover:text-red-500" title="Excluir">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-5 h-5">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M6 2L4 6h16l-2-4H6zM19 6v14H5V6h14zm-3 2H8v12h8V8z" />
-                </svg>
-            </button>
+                    <button class="delete-btn text-red-400 hover:text-red-500" title="Excluir">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-5 h-5">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M6 2L4 6h16l-2-4H6zM19 6v14H5V6h14zm-3 2H8v12h8V8z" />
+                        </svg>
+                    </button>
                 </div>
             `;
             taskList.appendChild(taskItem);
-            
+        
             const checkbox = taskItem.querySelector('input[type="checkbox"]');
             checkbox.addEventListener('change', saveTasksToLocalStorage);
-            
+        
             taskItem.querySelector('.delete-btn').addEventListener('click', () => {
                 taskItem.remove();
                 saveTasksToLocalStorage();
             });
         }
+        
         //Fim Lista
         
 
