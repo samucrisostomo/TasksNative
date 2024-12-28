@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gerencie Tarefas - TasksNative</title>
+    <script src="https://unpkg.com/heroicons@2.0.13"></script>
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
@@ -11,45 +12,36 @@
         };
     </script>
 </head>
-<body class="bg-gray-900 text-gray-100 min-h-screen flex justify-center items-center">
-    <!-- Main -->
-    <main class="flex flex-col items-center m-4">
-        <h1 class="text-4xl font-bold text-center text-gray-100 mb-">TasksNative</h1>
-        <h2 class="text-1xl font-bold text-center text-gray-400 mb-6">Gerencie Tarefas</h2>
-        <div class="w-full max-w-md p-4 bg-gray-800 rounded-lg shadow-lg">
-            <h1 class="text-3xl font-bold text-center text-gray-100 mb-6">Cadastre sua Tarefa</h1>
-            
-            <form id="taskForm" class="mb-6">
-                <div class="mb-4">
-                    <label for="taskName" class="block text-sm font-medium text-gray-300">Atividade</label>
-                    <input type="text" id="taskName" class="block w-full mt-2 px-3 py-2 bg-gray-700 text-gray-100 border border-gray-600 rounded-md focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" placeholder="Digite a atividade" required>
-                </div>
+<body class="bg-gray-900 text-gray-100 min-h-screen flex flex-col items-center">
 
-                <div class="mb-4">
-                    <label for="taskDate" class="block text-sm font-medium text-gray-300">Data</label>
-                    <input type="date" id="taskDate" class="block w-full mt-2 px-3 py-2 bg-gray-700 text-gray-100 border border-gray-600 rounded-md focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" required>
-                </div>
-
-                <div class="mb-4">
-                    <label for="taskTime" class="block text-sm font-medium text-gray-300">Hora</label>
-                    <input type="time" id="taskTime" class="block w-full mt-2 px-3 py-2 bg-gray-700 text-gray-100 border border-gray-600 rounded-md focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" required>
-                </div>
-
-                <button type="submit" class="w-full bg-indigo-600 text-white py-2 px-4 rounded-md hover:bg-indigo-500 focus:ring-2 focus:ring-indigo-300 transition duration-300">Adicionar Tarefa</button>
-            </form>
-            
+    <!-- Footer - Centralizado no topo -->
+    <footer class="w-full py-4 bg-gray-900 text-center">
+        <div class="mx-auto">
+            <h1 class="text-4xl font-bold text-gray-100">TasksNative</h1>
+            <h2 class="text-lg font-bold text-gray-400 mt-2">Gerencie suas Tarefas</h2>
         </div>
-    </main>
+    </footer>
 
-    <!-- Lista de Tarefas -->
-    <section>
-        <div class="flex flex-col items-center  w-full max-w-md p-4 bg-gray-800 rounded-lg shadow-lg mt-12">
-            <h1 class="text-3xl font-bold text-center text-gray-100 mb-6">Tarefas</h1>
+    <!-- Lista de Tarefas - Alinhada com Main -->
+    <section class="w-full mt-12 px-8">
+        <div class="flex flex-col w-full max-w-full p-4 bg-gray-800 rounded-lg shadow-lg">
+            <!-- Linha contendo Tarefas e Adicionar Tarefa -->
+            <div class="flex justify-between items-center mb-6">
+                <h1 class="text-3xl font-bold text-gray-100">Tarefas</h1>
+                <a href="views/create/create.html" class="inline-flex items-center px-4 py-2 bg-green-600 text-white text-sm font-bold rounded-lg shadow hover:bg-green-500 transition duration-300 focus:ring-2 focus:ring-green-300">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-5 h-5 mr-2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4" />
+                    </svg>
+                    Adicionar Tarefa
+                </a>
+            </div>
+    
             <ul id="taskList" class="space-y-4">
                 <!-- Tarefas serão adicionadas aqui -->
             </ul>
         </div>
     </section>
+
     <!-- JavaScript -->
     <script src="script.js"></script>
 </body>
