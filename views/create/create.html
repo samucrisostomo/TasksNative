@@ -25,24 +25,59 @@
     <!-- Main - Alinhado no canto superior esquerdo -->
     <main class="flex items-center justify-center w-full mt-12 px-8">
         <div class="w-full max-w-md p-4 bg-gray-800 rounded-lg shadow-lg">
-            <h1 class="text-3xl font-bold text-center text-gray-100 mb-6">Cadastre nova Tarefa</h1>
-            
+            <div class="flex items-center w-full max-w-md p-4 space-beetwen">
+                <!-- Botão de Voltar -->
+                <a href="../../index.html" class="flex items-center text-gray-100 mb-4 hover:text-indigo-400 transition">
+                    <svg class="w-5 h-5 mr-2" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
+                        <path fill-rule="evenodd" d="M7.707 14.707a1 1 0 0 1-1.414 0l-5-5a1 1 0 0 1 0-1.414l5-5a1 1 0 1 1 1.414 1.414L3.414 9H17a1 1 0 1 1 0 2H3.414l4.293 4.293a1 1 0 0 1 0 1.414z" clip-rule="evenodd" />
+                    </svg>
+                </a>
+
+                <h1 class="text-3xl font-bold text-center text-gray-100 mb-6">Cadastre nova Tarefa</h1>
+            </div>
+
+            <!-- !Formulário -->
             <form id="taskForm" class="mb-6">
+                <!-- !Atividade -->
                 <div class="mb-4">
                     <label for="taskName" class="block text-sm font-medium text-gray-300">Atividade</label>
                     <input type="text" id="taskName" class="block w-full mt-2 px-3 py-2 bg-gray-700 text-gray-100 border border-gray-600 rounded-md focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" placeholder="Digite a atividade" required>
                 </div>
 
+                <!-- !Descrição -->
+                <div class="mb-4">
+                    <label for="taskTime" class="block text-sm font-medium text-gray-300">Descricão</label>
+                    <input type="text" id="taskDescription" class="block w-full mt-2 px-3 py-2 bg-gray-700 text-gray-100 border border-gray-600 rounded-md focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" placeholder="Digite a descrição (opcional)" required>
+                </div>
+
+                <!-- !Data -->
                 <div class="mb-4">
                     <label for="taskDate" class="block text-sm font-medium text-gray-300">Data</label>
                     <input type="date" id="taskDate" class="block w-full mt-2 px-3 py-2 bg-gray-700 text-gray-100 border border-gray-600 rounded-md focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" required>
                 </div>
 
+                <!-- !Hora -->
                 <div class="mb-4">
                     <label for="taskTime" class="block text-sm font-medium text-gray-300">Hora</label>
                     <input type="time" id="taskTime" class="block w-full mt-2 px-3 py-2 bg-gray-700 text-gray-100 border border-gray-600 rounded-md focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" required>
                 </div>
 
+                <!-- Prioridade -->
+                <div class="mb-4">
+                    <label for="taskPriority" class="block text-sm font-medium text-gray-300">Prioridade</label>
+                    <select 
+                        id="taskPriority" 
+                        class="block w-full mt-2 px-3 py-2 bg-gray-700 text-gray-100 border border-gray-600 rounded-md focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
+                        <option value="" class="text-gray-100 bg-gray-700">Selecione a prioridade</option>
+                        <option value="baixa" class="text-green-500 bg-gray-700">Baixa</option>
+                        <option value="media" class="text-yellow-500 bg-gray-700">Média</option>
+                        <option value="alta" class="text-orange-500 bg-gray-700">Alta</option>
+                        <option value="urgente" class="text-red-500 bg-gray-700">Urgente</option>
+                    </select>
+                </div>
+
+
+                <!-- !Botão de Adicionar Tarefa -->
                 <button type="submit" class="w-full bg-indigo-600 text-white py-2 px-4 rounded-md hover:bg-indigo-500 focus:ring-2 focus:ring-indigo-300 transition duration-300">Adicionar Tarefa</button>
             </form>
             

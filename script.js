@@ -29,7 +29,7 @@ const taskForm = document.getElementById('taskForm');
                     <!-- Toggle Switch -->
                     <label class="inline-flex items-center cursor-pointer">
                         <input type="checkbox" class="sr-only peer border-white-600" ${completed ? 'checked' : ''}>
-                        <div class="relative w-11 h-6 bg-white-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-blue-300 dark:peer-focus:ring-blue-800 rounded-full peer dark:bg-white-700 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-white-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-white-600 peer-checked:bg-blue-700"></div>
+                        <div class="relative w-11 h-6 bg-white-200 peer-focus:outline-none peer-focus:ring-4 dark:peer-focus:ring-blue-800 rounded-full peer dark:bg-white-700 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-white-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-white-600 peer-checked:bg-green-700"></div>
                     </label>
                     <div>
                         <span class="block font-medium text-gray-200 text-lg">${name}</span>
@@ -39,7 +39,7 @@ const taskForm = document.getElementById('taskForm');
         
                 <div class="flex space-x-4">
                     <!-- Ícone de Editar -->
-                    <a href="views/task/edit.html?name=${encodeURIComponent(name)}&date=${date}&time=${time}" class="edit-btn text-indigo-400 hover:text-indigo-500" title="Editar">
+                    <a href="views/edit/edit.html?name=${encodeURIComponent(name)}&date=${date}&time=${time}" class="edit-btn text-indigo-400 hover:text-indigo-500" title="Editar">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-5 h-5">
                             <path stroke-linecap="round" stroke-linejoin="round" d="M16.862 3.487a2.25 2.25 0 113.182 3.182L7.211 19.5H3v-4.211L16.862 3.487z" />
                         </svg>
