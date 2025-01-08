@@ -4,14 +4,18 @@ document.getElementById('taskForm').addEventListener('submit', (e) => {
 
     // Obtém os valores do formulário
     const taskName = document.getElementById('taskName').value;
+    const taskDescription = document.getElementById('taskDescription').value;
     const taskDate = document.getElementById('taskDate').value;
     const taskTime = document.getElementById('taskTime').value;
+    const taskPriority = document.getElementById('taskPriority').value;
 
     // Cria o objeto da nova tarefa
     const newTask = {
         name: taskName,
+        description: taskDescription,
         date: taskDate,
         time: taskTime,
+        priority: taskPriority,
     };
 
     // Salva a nova tarefa no LocalStorage
