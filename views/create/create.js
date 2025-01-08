@@ -1,4 +1,4 @@
-// Manipula a submissão do formulário
+// create.js
 document.getElementById('taskForm').addEventListener('submit', (e) => {
     e.preventDefault(); // Impede o comportamento padrão de recarregar a página
 
@@ -23,9 +23,20 @@ document.getElementById('taskForm').addEventListener('submit', (e) => {
     tasks.push(newTask);
     localStorage.setItem('tasks', JSON.stringify(tasks));
 
-    // Exibe uma mensagem de sucesso
-    alert('Nova tarefa adicionada com sucesso!');
+    // Exibe o alerta
+    const alertBox = document.getElementById('alert-border-3');
+    alertBox.classList.remove('hidden');
+    alertBox.scrollIntoView({ behavior: 'smooth' });
 
-    // Redireciona para a página inicial relativa
-    window.location.href = '../../index.html';
+    // Após 3 segundos, oculta o alerta e redireciona
+    setTimeout(() => {
+        alertBox.classList.add('hidden');
+        window.location.href = '../../index.html';
+    }, 3000);
 });
+
+// Função para ocultar o alerta manualmente
+function hideAlert() {
+    const alertBox = document.getElementById('alert-border-3');
+    alertBox.classList.add('hidden');
+}

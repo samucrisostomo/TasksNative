@@ -38,9 +38,20 @@ document.getElementById('editForm').addEventListener('submit', (e) => {
 
     localStorage.setItem('tasks', JSON.stringify(updatedTasks));
 
-    // Exibe uma mensagem de sucesso
-    alert('Alterações salvas com sucesso!');
+    // Exibe o alerta
+    const alertBox = document.getElementById('alert-border-3');
+    alertBox.classList.remove('hidden');
+    alertBox.scrollIntoView({ behavior: 'smooth' });
 
-    // Redireciona para a página inicial
-    window.location.href = '../../index.html';
+    // Após 3 segundos, oculta o alerta e redireciona
+    setTimeout(() => {
+        alertBox.classList.add('hidden');
+        window.location.href = '../../index.html';
+    }, 3000);
 });
+
+// Função para ocultar o alerta manualmente
+function hideAlert() {
+    const alertBox = document.getElementById('alert-border-3');
+    alertBox.classList.add('hidden');
+}

@@ -25,7 +25,7 @@ function addTaskToDOM(name, description, date, time, priority, completed) {
     const taskItem = document.createElement('li');
     taskItem.classList.add('p-4', 'bg-gray-700', 'rounded-lg', 'shadow-lg', 'flex', 'items-center', 'justify-between');
 
-    const priorityClass = priority === 'urgente' ? 'text-red-500' : 'text-gray-400';
+    let priorityClass = priority === 'urgente' ? 'text-red-500' : 'text-gray-400';
 
     taskItem.innerHTML = `
         <div class="flex items-center space-x-4 mr-4">
