@@ -35,9 +35,9 @@ function addTaskToDOM(name, description, date, time, priority, completed) {
                 <div class="relative w-11 h-6 bg-white-200 peer-focus:outline-none peer-focus:ring-4 dark:peer-focus:ring-blue-800 rounded-full peer dark:bg-white-700 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-white-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-white-600 peer-checked:bg-green-700"></div>
             </label>
             <div>
-                <span class="block font-medium text-gray-200 text-lg">${name}</span>
-                <p class="text-sm ${priorityClass} capitalize">${priority}</p>
+                <span class="flex font-medium text-gray-200 text-lg">${name}</span>
                 <p class="text-sm text-gray-400">${date} às ${time}</p>
+                <p class="text-sm ${priorityClass} capitalize">${priority}</p>
             </div>
         </div>
 

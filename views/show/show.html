@@ -3,20 +3,62 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Editar Tarefa</title>
+    <title>Detalhes da Tarefa</title>
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body class="bg-gray-900 text-gray-100 min-h-screen flex flex-col items-center">
 
-    <!-- Header -->
-    <header class="w-full py-4 bg-gray-900 text-center">
-        <div class="mx-auto">
-            <h1 class="text-4xl font-bold text-gray-100">TasksNative</h1>
-            <h2 class="text-lg font-bold text-gray-400 mt-2">Gerencie suas Tarefas</h2>
-        </div>
-    </header>
+    <!-- Cabeçalho -->
+    <div class="flex items-center mb-6 w-full py-4 px-8">
+        <a href="../../index.html" class="flex items-center text-gray-100 hover:text-indigo-400 transition">
+            <svg class="w-8 h-8 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14M5 12l4-4m-4 4 4 4"/>
+            </svg>
+        </a>
+        <h1 class="text-4xl font-bold text-center flex-1">Detalhes da Tarefa</h1>
+    </div>
 
-    <!-- Javascript -->
-    <script src="edit.js"></script>
+    <!-- Detalhes da Tarefa -->
+    <main class="w-full max-w-md p-6 bg-gray-800 rounded-lg shadow-lg">
+        <div id="taskDetails">
+            <p>Carregando detalhes...</p>
+        </div>
+    </main>
+
+    <!-- Script -->
+    <script>
+        // Função para pegar os parâmetros da URL
+        function getTaskDetails() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const taskName = urlParams.get('name');
+            const taskDate = urlParams.get('date');
+            const taskTime = urlParams.get('time');
+            
+            // Pegando o nome da tarefa do localStorage
+            const tasks = JSON.parse(localStorage.getItem('tasks')) || [];
+            const task = tasks.find(t => t.name === taskName && t.date === taskDate && t.time === taskTime);
+
+            if (task) {
+                // Atualiza os detalhes com as informações da tarefa
+                document.getElementById('taskDetails').innerHTML = `
+                <div class="flex items-center justify-center mb-4">
+                    <h1 class="text-3xl font-bold text-indigo-500 text-center">${task.name}</h1>
+                </div>
+                    <p class="font-bold text-xl text-gray-400">Descrição: <span class="font-bold text-gray-300">${task.description}</span></p>
+                    <p class="font-bold text-xl text-gray-400">Data: <span class="font-bold text-gray-300">${task.date}</span></p>
+                    <p class="font-bold text-xl text-gray-400">Hora: <span class="font-bold text-gray-300">${task.time}</span></p>
+                    <p class="font-bold text-xl text-gray-400">Prioridade: <span class="font-bold text-gray-300">${task.priority}</span></p>
+                    <p class="font-bold text-xl text-gray-400">Status: <span class="font-bold text-gray-300">${task.completed ? "Concluída" : "Pendente"}</span></p>
+                `;
+            } else {
+                document.getElementById('taskDetails').innerHTML = `
+                    <p class="text-red-500">Tarefa não encontrada!</p>
+                `;
+            }
+        }
+
+        // Chama a função ao carregar a página
+        window.onload = getTaskDetails;
+    </script>
 </body>
 </html>
