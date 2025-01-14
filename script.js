@@ -43,7 +43,16 @@ function addTaskToDOM(name, description, date, time, priority, completed) {
             <div>
                 <span class="flex font-medium text-gray-200 text-lg">${name}</span>
                 <p class="text-sm text-gray-400">${date} às ${time}</p>
-                <p class="text-sm ${priorityClass} capitalize">${priority}</p>
+                
+                <!-- Prioridade -->
+                <p class="text-sm flex ${priorityClass} capitalize">
+                <svg class="w-3 h-3 mt-1 mr-1 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7.757 12h8.486M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"/>
+                </svg>
+                ${priority}
+                
+                </p>
+
             </div>
         </div>
         <div class="flex space-x-4">
